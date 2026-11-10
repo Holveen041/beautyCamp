@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#06060c" />
+  <title>Конкурс красоты</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="glow glow--one" aria-hidden="true"></div>
+  <div class="glow glow--two" aria-hidden="true"></div>
+
+  <main class="app">
+    <header class="header">
+      <div class="brand">
+        <div class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M13.6 2 4 13.6h6.1L9.4 22 20 9.4h-6.4L13.6 2Z" fill="#0b0b16" />
+          </svg>
+        </div>
+        <div class="brand__text">
+          <h1 class="brand__title">Конкурс красоты</h1>
+          <p class="brand__sub">Попарные сравнения — честный рейтинг</p>
+        </div>
+      </div>
+
+      <div class="progress">
+        <div class="progress__meta">
+          <span id="roundLabel">Раунд 1 из 1</span>
+          <span id="countLabel">0 / 0</span>
+        </div>
+        <div class="progress__track" id="progressTrack" role="progressbar"
+             aria-label="Прогресс сравнений" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div class="progress__bar" id="progressBar"></div>
+        </div>
+      </div>
+    </header>
+
+    <section class="arena" id="arena">
+      <p class="arena__question">Кто красивее?</p>
+
+      <button class="card" id="cardTop" type="button">
+        <span class="avatar" id="avatarTop" aria-hidden="true">?</span>
+        <span class="card__body">
+          <span class="card__name" id="nameTop">—</span>
+          <span class="card__hint">нажмите, чтобы выбрать</span>
+        </span>
+        <span class="card__pick" aria-hidden="true">Выбрать</span>
+      </button>
+
+      <div class="vs" aria-hidden="true"><span>VS</span></div>
+
+      <button class="card" id="cardBottom" type="button">
+        <span class="avatar" id="avatarBottom" aria-hidden="true">?</span>
+        <span class="card__body">
+          <span class="card__name" id="nameBottom">—</span>
+          <span class="card__hint">нажмите, чтобы выбрать</span>
+        </span>
+        <span class="card__pick" aria-hidden="true">Выбрать</span>
+      </button>
+
+      <p class="arena__keys">
+        <kbd>↑</kbd> верхний&nbsp;&nbsp;·&nbsp;&nbsp;<kbd>↓</kbd> нижний
+      </p>
+    </section>
+
+    <section class="result" id="result" hidden>
+      <div class="result__head">
+        <div class="trophy" aria-hidden="true">🏆</div>
+        <h2 class="result__title">Итоговый рейтинг</h2>
+        <p class="result__sub" id="resultSub"></p>
+      </div>
+
+      <ol class="ranking" id="ranking"></ol>
+
+      <p class="result__note" id="resultNote"></p>
+
+      <div class="result__actions">
+        <button class="btn" id="restartBtn" type="button">Пройти заново</button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span id="footerInfo">Все сравнения проходят в браузере — ничего не сохраняется.</span>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
